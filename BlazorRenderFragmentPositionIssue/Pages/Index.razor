@@ -1,0 +1,23 @@
+﻿@page "/"
+
+<p>Uncheck to hide item two, then check again to show item two, 
+  but now item two appears at the end of the list, but should be at position two</p>
+<label>
+  <input type="checkbox" @bind=showItemTwo />
+  Show item two
+</label>
+
+<List>
+  <ListItem Value="One"></ListItem>
+  @if (showItemTwo)
+  {
+    <ListItem Value="Two"></ListItem>
+  }
+  <ListItem Value="Three"></ListItem>
+  <ListItem Value="Four"></ListItem>
+</List>
+
+@code
+{
+  bool showItemTwo = true;
+}
